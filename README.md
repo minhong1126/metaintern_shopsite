@@ -24,3 +24,6 @@ https://www.figma.com/design/DKeR5wR65RkxcAWReoBccl/%EC%9D%91%EC%9A%A9%EC%86%8C%
 - 2개의 컬럼으로 각각 3개씩의 상품 나열
 - 장바구니 실시간 렌더링
 - 배포 URL 
+
+## 참고
+https://github.com/ssac-dev/shooking
