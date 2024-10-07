@@ -3,10 +3,18 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <>
+    <div>
+      <header>
+        <button className="text-3xl font-bold underline">
+          장바구니
+        </button>
       </header>
+      <body>
+        {/* 상품 목록 */}
+      </body>
     </div>
+    </>
   );
 }
 
