@@ -3,6 +3,11 @@ import Cart from './components/cart';
 import Product from './components/product';
 import './App.css';
 
+// <태그 className='' -> TailwindCss
+// interface {}, 파라미터 -> Typescript
+// 형식이라 무시하셔도 됩니다! 나머지는 React로 작성했어요!
+
+// 상품 정보 리스트
 const brandList = ["브랜드A", "브랜드A", "브랜드B", "브랜드B", "브랜드C", "브랜드C"];
 const priceList = [35000, 25000, 35000, 35000, 35000, 35000];
 const explainList = ["편안하고 착용감이 좋은 신발", "힙한 컬러가 매력적인 신발"];
@@ -10,6 +15,7 @@ const explainList = ["편안하고 착용감이 좋은 신발", "힙한 컬러�
 function App() {
   const [total, setTotal] = useState(0);
 
+  // 장바구니 담긴 갯수 업데이트
   function setCartTotal(totalNum: number) {
     setTotal(totalNum);
   }
@@ -19,7 +25,8 @@ function App() {
       <div className='h-[1000px] w-[430px] align-center'>
         <header className="flex justify-between items-center bg-black text-white h-[69px] w-full p-[31px]">
           <div className="ml-auto">
-            <Cart total={total} />
+            {/* 장바구니 컴포넌트 */}
+            <Cart total={total} />  
           </div>
         </header>
         <div className="flex flex-col h-full p-[23px]">
@@ -28,7 +35,9 @@ function App() {
             <h4 className='text-[16px]'>현재 {priceList.length}개의 상품이 있습니다</h4>
           </div>
           <div className="grid grid-cols-2 gap-[16px]">
+            {/* 반복문으로 6개 생성 후 인덱스로 값을 보냄 */}
             {Array.from({ length: 6 }, (_, i) => (
+              // 상품 컴포넌트
               <Product 
                 key={i}
                 index={i}

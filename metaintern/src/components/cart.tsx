@@ -5,7 +5,6 @@ interface totalNum{
 }
 
 function Cart(props: totalNum){
-
   return(
     <button>
       <MdOutlineShoppingBag  className="h-[24px] w-[20px]" />

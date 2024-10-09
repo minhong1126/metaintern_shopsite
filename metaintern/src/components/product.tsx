@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// TypeScirpt 타입 설정
 interface ProductOption{
   index: number;
   brand: string;
@@ -12,11 +13,13 @@ interface ProductOption{
 function Product(props: ProductOption) {
   const [clicked, setClicked] = useState(false);
 
+  // 장바구니 담긴 갯수 반환 - 이미 선택되어 있었을 때는 -1, 선택되어 있지 않았으면 +1
   function productClicked() {
     setClicked(!clicked);
     clicked ? (props.setCartTotal(props.total - 1)) : (props.setCartTotal(props.total + 1));
   }
 
+  // 인덱스로 사진 가져오기
   const address = require(`../assets/img${props.index + 1}.png`);
 
   return (
