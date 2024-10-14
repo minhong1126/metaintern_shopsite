@@ -4,7 +4,11 @@ module.exports = {
     "./public/index.html",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Montserrat'],
+      },
+    },
   },
   plugins: [],
 }

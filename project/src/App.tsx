@@ -10,7 +10,7 @@ import './App.css';
 // 상품 정보 리스트
 const brandList = ["브랜드A", "브랜드A", "브랜드B", "브랜드B", "브랜드C", "브랜드C"];
 const priceList = [35000, 25000, 35000, 35000, 35000, 35000];
-const explainList = ["편안하고 착용감이 좋은 신발", "힙한 컬러가 매력적인 신발"];
+const explainList = ["편안하고 착용감 좋은 신발", "힙한 컬러가 매력적인 신발"];
 
 function App() {
   const [total, setTotal] = useState(0);
@@ -29,10 +29,10 @@ function App() {
             <Cart total={total} />  
           </div>
         </header>
-        <div className="flex flex-col h-full p-[23px]">
-          <div className="pt-[32px] pb-[7px]">
-            <h1 className="font-bold text-[30px]">신발 상품 목록</h1>
-            <h4 className='text-[16px]'>현재 {priceList.length}개의 상품이 있습니다</h4>
+        <div className="flex flex-col p-[23px]">
+          <div className="pt-[32px] pb-[23px]">
+            <p className="font-bold text-[30px]">신발 상품 목록</p>
+            <p className='text-[16px]'>현재 {priceList.length}개의 상품이 있습니다</p>
           </div>
           <div className="grid grid-cols-2 gap-[16px]">
             {/* 반복문으로 6개 생성 후 인덱스로 값을 보냄 */}

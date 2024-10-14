@@ -24,14 +24,14 @@ function Product(props: ProductOption) {
 
   return (
     <>
-      <div className="h-[247px] w-[184px] border border-[#F2F2F2] rounded-[15px] mt-[16px]">
+      <div className="h-[247px] w-[184px] border border-[#F2F2F2] rounded-[15px]">
         <img src={address} className="h-[115px] w-[184px] object-cover"/>
-        <div className="p-[12px]">
-          <h2 className="text-[16px] font-semibold"> {props.brand} </h2>
-          <h4 className="text-[13px] text-[#7C7A7A]"> {props.explanation} </h4>
-          <h3 className="text-[14px] font-bold mt-[8px]">{props.price}</h3>
+        <div className="pl-[17px] pr-[12px] pt-[17px] pb-[20px] mb-[7px]">
+          <p className="text-[16px] font-medium"> {props.brand} </p>
+          <p className="text-[13px] text-[#7C7A7A]"> {props.explanation} </p>
+          <p className="text-[14px] font-medium">{props.price}원</p>
           <button
-            className={`mt-[10px] px-[12px] py-[6px] rounded-[5px] ${clicked ? 'bg-[#D8D8D8] text-black' : 'bg-black text-white'}`}
+            className={`h-[21px] w-[43px] rounded-[10px] text-[10px] ${clicked ? 'bg-[#D8D8D8] text-black' : 'bg-black text-white'}`}
             onClick={productClicked}
           >
             {clicked ? '담김!' : '담기'}
