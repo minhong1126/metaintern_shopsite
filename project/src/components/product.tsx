@@ -22,6 +22,10 @@ function Product(props: ProductOption) {
   // 인덱스로 사진 가져오기
   const address = require(`../assets/img${props.index + 1}.png`);
 
+  function gotoPayment(){
+    
+  }
+
   return (
     <>
       <div className="h-[247px] w-[184px] border border-[#F2F2F2] rounded-[15px]">
@@ -36,6 +40,7 @@ function Product(props: ProductOption) {
           >
             {clicked ? '담김!' : '담기'}
           </button>
+          <button onClick={gotoPayment}> 구매 </button>
         </div>
       </div>
     </>
