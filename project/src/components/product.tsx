@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // TypeScirpt 타입 설정
 interface ProductOption{
@@ -12,7 +13,8 @@ interface ProductOption{
 
 function Product(props: ProductOption) {
   const [clicked, setClicked] = useState(false);
-
+  const nav = useNavigate()
+    
   // 장바구니 담긴 갯수 반환 - 이미 선택되어 있었을 때는 -1, 선택되어 있지 않았으면 +1
   function productClicked() {
     setClicked(!clicked);
@@ -23,7 +25,7 @@ function Product(props: ProductOption) {
   const address = require(`../assets/img${props.index + 1}.png`);
 
   function gotoPayment(){
-    
+    nav(`${props.index}/pay`); 
   }
 
   return (
@@ -40,7 +42,7 @@ function Product(props: ProductOption) {
           >
             {clicked ? '담김!' : '담기'}
           </button>
-          <button onClick={gotoPayment}> 구매 </button>
+          <button className="h-[21px] w-[43px] rounded-[10px] text-[10px] bg-[#FFEF64] ml-[9px]" onClick={gotoPayment}> 구매 </button>
         </div>
       </div>
     </>

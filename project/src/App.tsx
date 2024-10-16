@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import MainPage from './pages/MainPage';
 import PaymentPage from './pages/PaymentPage';
+import AddCardPage from './pages/AddCard';
 
 const App: React.FC = () => {
   return (
@@ -11,7 +12,8 @@ const App: React.FC = () => {
       <React.StrictMode>
         <Routes>
           <Route path='/' element={<MainPage />} />
-          <Route path='/pay' element={<PaymentPage />} />
+          <Route path=':index/pay' element={<PaymentPage />} />
+          <Route path='/addCard' element={<AddCardPage />} />
         </Routes>
       </React.StrictMode>
     </BrowserRouter>
@@ -19,9 +21,7 @@ const App: React.FC = () => {
 };
 
 const rootElement = document.getElementById('root');
-if (rootElement) {
-  const root = ReactDOM.createRoot(rootElement);
-  root.render(<App />);
-}
+const root = ReactDOM.createRoot(rootElement!);
+root.render(<App />);
 
 export default App;
