@@ -22,7 +22,7 @@ function Product(props: ProductOption) {
   }
 
   // 인덱스로 사진 가져오기
-  const address = require(`../assets/img${props.index + 1}.png`);
+  const address = require(`../../assets/product/img${props.index + 1}.png`);
 
   function gotoPayment(){
     nav(`${props.index}/pay`); 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Cart from '../components/cart';
-import Product from '../components/product';
+import Cart from '../components/product/cart';
+import Product from '../components/product/product';
 
 // <태그 className='' -> TailwindCss
 // interface {}, 파라미터 -> Typescript
