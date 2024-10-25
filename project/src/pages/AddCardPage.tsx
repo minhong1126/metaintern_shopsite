@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { GoDotFill } from "react-icons/go";
 import { IoIosArrowBack, IoIosClose } from "react-icons/io";
 
-interface CardInfo {
+class CardInfo {
   cardNum?: number;
   due?: {
     year?: number,
@@ -97,7 +97,7 @@ function AddCardPage() {
   };
 
   const handleSave = () => {
-    localStorage.setItem('cardInfo', JSON.stringify(cardInfo));
+    window.localStorage.setItem('cardInfo', JSON.stringify(cardInfo));
     nav(-1);
   };
 
@@ -116,7 +116,7 @@ function AddCardPage() {
           </button>
         </header>
         <div className='flex justify-center items-center mt-[29px]'>
-          <img src='../assets/payment/card.png' className='h-[133px] w-[213px]' />
+          <img src='../src/assets/payment/card.png' className='h-[133px] w-[213px]' />
         </div>
         <div className='ml-[28px] mt-[25px]'>
           <div>
@@ -199,7 +199,7 @@ function AddCardPage() {
           <div>
             {isFormComplete() && (
               <button onClick={handleSave} 
-                className='flex w-[317px] h-[40px] items-center justify-center bg-black text-white rounded-full'>
+                className='flex w-[317px] h-[40px] mt-[9px] items-center justify-center bg-black text-white rounded-full'>
                   저장하기 
               </button>
             )}
