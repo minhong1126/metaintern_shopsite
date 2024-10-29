@@ -1,10 +1,12 @@
 import { IoIosClose } from "react-icons/io";
 import { FaPlus } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
+import LocalCard from "../components/payment/localCard";
 
 function PaymentPage() {  
-  const nav = useNavigate();
   const cardInfo = window.localStorage.getItem('cardInfo');
+  console.log(cardInfo);
+  const nav = useNavigate();
 
   function goBack(){
     nav(-1);
@@ -24,25 +26,14 @@ function PaymentPage() {
           <IoIosClose className='h-[20px] w-[20px] '/>
         </button>
       </header>
-      <div>
+      <div className="mt-[22px]">
         { cardInfo ? (
           <>
-          <div className="flex items-center justify-center">
-            <div>
-              <img src='../assets/payment/card.png' />
-            </div>
-            <div>
-              <button className="flex w-[213px] h-[30px] mt-[13px] items-center justify-center bg-[#FFEF64] text-white rounded-full">
-                이 카드로 결제하기 
-              </button>
-
-            </div>
-          </div>
-          </>
-          ) : null}
+            <LocalCard cardNum={cardInfo} />
+          </>) : null}
       </div>
-      <div>
-        <p className='flex justify-center mt-[86px] text-[14px] text-[#575757]'> 새로운 카드를 등록해주세요. </p>
+      <div className=" mt-[86px]">
+        { cardInfo ? null : <p className='flex justify-center text-[14px] text-[#575757]'> 새로운 카드를 등록해주세요. </p>}
         <div className='flex justify-center'>
           <button onClick={gotoAddCard} 
             className='flex justify-center items-center h-[123px] w-[208px] bg-[#E5E5E5] mt-[9px]'>
