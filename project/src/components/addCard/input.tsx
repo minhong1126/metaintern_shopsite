@@ -9,7 +9,6 @@ const StyledInput = styled.input`
   text-align: center;
   margin-bottom: 19px;
   margin-top: 3px;
-  width: 100%; // 필요에 따라 너비 조정
 `;
 
 interface InputProps {
@@ -19,19 +18,36 @@ interface InputProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   className?: string;
-  maxLength?: number; // 추가된 부분
+  maxLength: number;
 }
 
-const Input: React.FC<InputProps> = ({ name, type, value, onChange, placeholder, className, maxLength }) => {
+const Input: React.FC<InputProps> = ({
+  name,
+  type,
+  value,
+  onChange,
+  placeholder,
+  className,
+  maxLength,
+}) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const inputValue = e.target.value;
+
+    // Check the length against maxLength
+    if (inputValue.length <= maxLength) {
+      onChange(e);
+    }
+  };
+
   return (
     <StyledInput
       name={name}
       type={type}
       value={value}
-      onChange={onChange}
+      onChange={handleChange} // Use the new handleChange
       placeholder={placeholder}
       className={className}
-      maxLength={maxLength} // 추가된 부분
+      maxLength={maxLength} // Still useful for browser validation
     />
   );
 };
