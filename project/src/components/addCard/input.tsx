@@ -27,13 +27,11 @@ const Input: React.FC<InputProps> = ({
   value,
   onChange,
   placeholder,
-  className,
   maxLength,
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
 
-    // Check the length against maxLength
     if (inputValue.length <= maxLength) {
       onChange(e);
     }
@@ -44,10 +42,9 @@ const Input: React.FC<InputProps> = ({
       name={name}
       type={type}
       value={value}
-      onChange={handleChange} // Use the new handleChange
+      onChange={handleChange} 
       placeholder={placeholder}
-      className={className}
-      maxLength={maxLength} // Still useful for browser validation
+      maxLength={maxLength} 
     />
   );
 };

@@ -72,7 +72,7 @@ function AddCardPage() {
 
   const isFormComplete = () => {
     return (
-      (cardInfo.cardNum !== undefined) &&
+      cardInfo.cardNum !== undefined &&
       cardInfo.due !== undefined &&
       cardInfo.name !== undefined &&
       cardInfo.code !== undefined &&
