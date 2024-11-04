@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import cartState from "../../atoms/cartState";
 
 // TypeScirpt 타입 설정
 interface ProductOption{
@@ -7,18 +9,23 @@ interface ProductOption{
   brand: string;
   explanation: string;
   price: number;
-  total: number;
-  setCartTotal: (total: number) => void;
 }
 
 function Product(props: ProductOption) {
   const [clicked, setClicked] = useState(false);
+  const [cart, setCart] = useRecoilState(cartState);
   const nav = useNavigate()
     
   // 장바구니 담긴 갯수 반환 - 이미 선택되어 있었을 때는 -1, 선택되어 있지 않았으면 +1
   function productClicked() {
-    // 클릭했을 때 cartState에 인덱스 추가 -> 장바구니 클릭 시 인덱스를 바탕으로 값 가져오기 
-    clicked ? (props.setCartTotal(props.total - 1)) : (props.setCartTotal(props.total + 1));
+    if(clicked){
+      setCart(prev => prev.filter(item => item !== props.index))
+      console.error("뺌:", cart);
+    }
+    else{
+      setCart(prev => [...prev, props.index]);
+      console.error("넣음:", cart);
+    }
     setClicked(!clicked);
   }
 
@@ -32,7 +39,7 @@ function Product(props: ProductOption) {
   return (
     <>
       <div className="h-[247px] w-[184px] border border-[#F2F2F2] rounded-[15px]">
-        <img src={address} className="h-[115px] w-[184px] object-cover"/>
+        <img src={address} alt='상품 사진' className="h-[115px] w-[184px] object-cover"/>
         <div className="pl-[17px] pr-[12px] pt-[17px] pb-[20px] mb-[7px]">
           <p className="text-[16px] font-medium"> {props.brand} </p>
           <p className="text-[13px] text-[#7C7A7A]"> {props.explanation} </p>

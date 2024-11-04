@@ -11,13 +11,7 @@ import cartState from '../atoms/cartState';
 
 function MainPage() {
   const [cartList] = useRecoilState(cartState);
-  const [total, setTotal] = useState(0);
   const [productList] = useRecoilState(productState);
-
-  // 장바구니 담긴 갯수 업데이트
-  function setCartTotal(totalNum: number) {
-    setTotal(totalNum);
-  }
 
   return (
     <>
@@ -25,7 +19,7 @@ function MainPage() {
         <header className="flex justify-between items-center bg-black text-white h-[69px] w-full p-[31px]">
           <div className="ml-auto">
             {/* 장바구니 컴포넌트 */}
-            <Cart total={total} />  
+            <Cart />  
           </div>
         </header>
         <div className="flex flex-col p-[23px]">
@@ -42,9 +36,7 @@ function MainPage() {
                 index={i}
                 brand={productList.brandList[i]}
                 explanation={productList.explainList[i % 2]}
-                price={productList.priceList[i]} 
-                total={total}
-                setCartTotal={setCartTotal}
+                price={productList.priceList[i]}
               />
             ))}
           </div>

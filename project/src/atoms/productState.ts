@@ -1,7 +1,12 @@
 import { atom } from "recoil";
 
 // 전체 상품 리스트
-// 상품 정보 리스트
+
+// interface product{
+//   brandList: string;
+//   priceList: number;
+//   explainList: string;
+// }
 
 const productState = atom({
   key: 'product',
