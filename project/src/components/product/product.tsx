@@ -17,8 +17,9 @@ function Product(props: ProductOption) {
     
   // 장바구니 담긴 갯수 반환 - 이미 선택되어 있었을 때는 -1, 선택되어 있지 않았으면 +1
   function productClicked() {
-    setClicked(!clicked);
+    // 클릭했을 때 cartState에 인덱스 추가 -> 장바구니 클릭 시 인덱스를 바탕으로 값 가져오기 
     clicked ? (props.setCartTotal(props.total - 1)) : (props.setCartTotal(props.total + 1));
+    setClicked(!clicked);
   }
 
   // 인덱스로 사진 가져오기
