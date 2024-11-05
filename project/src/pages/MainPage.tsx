@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Cart from '../components/product/cart';
 import Product from '../components/product/product';
-import { useRecoilState } from 'recoil';
-import productState from '../atoms/productState';
-import cartState from '../atoms/cartState';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import productState from '../state/productState';
+import cartState from '../state/cartState';
 
 // <태그 className='' -> TailwindCss
 // interface {}, 파라미터 -> Typescript
@@ -11,7 +11,7 @@ import cartState from '../atoms/cartState';
 
 function MainPage() {
   const [cartList] = useRecoilState(cartState);
-  const [productList] = useRecoilState(productState);
+  const productList = useRecoilValue(productState);
 
   return (
     <>
@@ -29,7 +29,7 @@ function MainPage() {
           </div>
           <div className="grid grid-cols-2 gap-[16px]">
             {/* 반복문으로 6개 생성 후 인덱스로 값을 보냄 */}
-            {Array.from({ length: 6 }, (_, i) => (
+            {Array.from({ length: productList.brandList.length }, (_, i) => (
               // 상품 컴포넌트
               <Product 
                 key={i}
@@ -37,6 +37,7 @@ function MainPage() {
                 brand={productList.brandList[i]}
                 explanation={productList.explainList[i % 2]}
                 price={productList.priceList[i]}
+                // selected={}
               />
             ))}
           </div>

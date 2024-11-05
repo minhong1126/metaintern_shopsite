@@ -1,10 +1,14 @@
-import { IoIosArrowRoundBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import cartState from "../state/cartState";
+import { IoIosArrowRoundBack } from "react-icons/io";
+import CartProduct from "../components/cart/cartProduct";
+
 
 function CartPage() {
   const nav = useNavigate();
-  const cnt = 0;
-  
+  const cart = useRecoilValue(cartState);
+
   function goBack(){
     nav(-1);
   }
@@ -19,10 +23,12 @@ function CartPage() {
       </header>
       <div className="mt-[32px] ml-[22px]">
         <p className="text-[30px] font-extrabold"> 장바구니 </p>
-        <p className="text-[16px]"> 현재 {cnt}개의 상품이 담겨있습니다.</p>
+        <p className="text-[16px]"> 현재 {cart.length}개의 상품이 담겨있습니다.</p>
       </div>
       <div>
-        {/* {cnt ? } */}
+        {Array.from({ length: cart.length }, (_, i) => (
+          <CartProduct key={i} index={i} />
+        ))}
       </div>
     </div>
     </>

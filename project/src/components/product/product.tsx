@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
-import cartState from "../../atoms/cartState";
+import cartState from "../../state/cartState";
 
 // TypeScirpt 타입 설정
 interface ProductOption{
@@ -9,6 +9,7 @@ interface ProductOption{
   brand: string;
   explanation: string;
   price: number;
+  // selected: boolean;
 }
 
 function Product(props: ProductOption) {
@@ -20,11 +21,9 @@ function Product(props: ProductOption) {
   function productClicked() {
     if(clicked){
       setCart(prev => prev.filter(item => item !== props.index))
-      console.error("뺌:", cart);
     }
     else{
       setCart(prev => [...prev, props.index]);
-      console.error("넣음:", cart);
     }
     setClicked(!clicked);
   }
