@@ -2,13 +2,13 @@ import { atom } from "recoil";
 
 // 전체 상품 리스트
 
-// interface product{
-//   brandList: string;
-//   priceList: number;
-//   explainList: string;
-// }
+interface product{
+  brandList: string[];
+  priceList: number[];
+  explainList: string[];
+}
 
-const productState = atom({
+const productState = atom<product>({
   key: 'product',
   default:{
     brandList: ["브랜드A", "브랜드A", "브랜드B", "브랜드B", "브랜드C", "브랜드C"],

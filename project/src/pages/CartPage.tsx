@@ -27,7 +27,7 @@ function CartPage() {
       </div>
       <div>
         {Array.from({ length: cart.index.length }, (_, i) => (
-          <CartProduct key={i} index={i} />
+          <CartProduct key={i} index={cart.index[i]} />
         ))}
       </div>
     </div>
