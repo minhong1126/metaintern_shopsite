@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Cart from '../components/product/cart';
 import Product from '../components/product/product';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import productState from '../state/productState';
 import cartState from '../state/cartState';
 
@@ -10,7 +10,7 @@ import cartState from '../state/cartState';
 // 형식이라 무시하셔도 됩니다! 나머지는 React로 작성했어요!
 
 function MainPage() {
-  const [cartList] = useRecoilState(cartState);
+  const cartList = useRecoilValue(cartState);
   const productList = useRecoilValue(productState);
 
   return (
@@ -37,7 +37,7 @@ function MainPage() {
                 brand={productList.brandList[i]}
                 explanation={productList.explainList[i % 2]}
                 price={productList.priceList[i]}
-                // selected={}
+                selected={cartList.includes(i)}
               />
             ))}
           </div>

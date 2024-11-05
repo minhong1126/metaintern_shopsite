@@ -9,11 +9,11 @@ interface ProductOption{
   brand: string;
   explanation: string;
   price: number;
-  // selected: boolean;
+  selected: boolean;
 }
 
 function Product(props: ProductOption) {
-  const [clicked, setClicked] = useState(false);
+  const [clicked, setClicked] = useState(props.selected);
   const [cart, setCart] = useRecoilState(cartState);
   const nav = useNavigate()
     
