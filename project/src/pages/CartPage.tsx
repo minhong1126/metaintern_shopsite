@@ -23,10 +23,10 @@ function CartPage() {
       </header>
       <div className="mt-[32px] ml-[22px]">
         <p className="text-[30px] font-extrabold"> 장바구니 </p>
-        <p className="text-[16px]"> 현재 {cart.length}개의 상품이 담겨있습니다.</p>
+        <p className="text-[16px]"> 현재 {cart.index.length}개의 상품이 담겨있습니다.</p>
       </div>
       <div>
-        {Array.from({ length: cart.length }, (_, i) => (
+        {Array.from({ length: cart.index.length }, (_, i) => (
           <CartProduct key={i} index={i} />
         ))}
       </div>

@@ -14,9 +14,9 @@ function Cart(){
   return(
     <button>
       <MdOutlineShoppingBag  className="h-[24px] w-[20px]" onClick={gotoCart}/>
-      { cartTotal.length === 0 ? null : (
+      { cartTotal.index.length === 0 ? null : (
         <span className="absolute bg-white text-black rounded-full h-[19px] w-[19px] top-[15px]">
-          {cartTotal.length}
+          {cartTotal.index.length}
         </span>
       )} 
     </button>

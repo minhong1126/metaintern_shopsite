@@ -37,7 +37,7 @@ function MainPage() {
                 brand={productList.brandList[i]}
                 explanation={productList.explainList[i % 2]}
                 price={productList.priceList[i]}
-                selected={cartList.includes(i)}
+                selected={cartList.index.includes(i)}
               />
             ))}
           </div>

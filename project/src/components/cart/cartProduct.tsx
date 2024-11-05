@@ -11,13 +11,13 @@ function CartProduct({index}: index){
 
   return(
     <>
-    <div className="flex h-[185px]">
-      <div>
-        <img src={address} alt='상품사진' className="h-[138.68px] w-[146.68px]" />
-        <div>
-          <p> {productList.brandList[index]} </p>
-          <p> {productList.priceList[index]} </p>
-          <div className="flex">
+    <div className="flex items-center h-[185px]">
+      <div className="flex ml-[22px]">
+        <img src={address} alt='상품사진' className="h-[138.68px] w-[146.68px] rounded-[30px]" />
+        <div className="flex flex-col h-[121.2px] w-[191.13px] ml-[54.54px]">
+          <p className="text-[16px]"> {productList.brandList[index]} </p>
+          <p className="text-[24px] font-bold"> {productList.priceList[index]} 원 </p>
+          <div className="flex mt-[24px]">
             <button> - </button>
             <p> 갯수 </p>
             <button> + </button>
