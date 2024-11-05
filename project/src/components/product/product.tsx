@@ -47,7 +47,7 @@ function Product(props: ProductOption) {
   const address = require(`../../assets/product/img${props.index + 1}.png`);
 
   function gotoPayment() {
-    nav(`${props.index}/pay`);
+    nav(`/pay`);
   }
 
   return (

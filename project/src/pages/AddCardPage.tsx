@@ -100,7 +100,7 @@ function AddCardPage() {
         </button>
       </header>
       <div className='flex justify-center items-center mt-[29px]'>
-        <img src={cardImg} className='h-[133px] w-[213px]' />
+        <img src={cardImg} alt='카드 사진' className='h-[133px] w-[213px]' />
       </div>
       <div className='ml-[28px] mt-[25px]'>
         <div>
@@ -111,7 +111,7 @@ function AddCardPage() {
             name='cardNum' 
             value={cardInfo.cardNum ?? ''}
             onChange={handleChange} 
-            maxLength={12} // 카드 번호 최대 길이
+            maxLength={12}
           />
         </div>
         <div>
@@ -124,7 +124,7 @@ function AddCardPage() {
               value={cardInfo.due?.year ?? ''} 
               onChange={handleChange} 
               placeholder='YY' 
-              maxLength={2} // 연도 최대 길이
+              maxLength={2}
             />
             <span className='mx-2'>/</span>
             <Input 
@@ -134,7 +134,7 @@ function AddCardPage() {
               value={cardInfo.due?.month ?? ''}
               onChange={handleChange} 
               placeholder='MM' 
-              maxLength={2} // 월 최대 길이
+              maxLength={2}
             />
           </div>
         </div>
@@ -146,7 +146,7 @@ function AddCardPage() {
             name='name' 
             value={cardInfo.name ?? ''}
             onChange={handleChange} 
-            maxLength={30} // 이름 최대 길이
+            maxLength={30} 
           />
         </div>
         <div>
@@ -157,7 +157,7 @@ function AddCardPage() {
             name='code' 
             value={cardInfo.code ?? ''}
             onChange={handleChange} 
-            maxLength={3} // 보안 코드 최대 길이
+            maxLength={3} 
           />
         </div>
         <div>
@@ -169,7 +169,7 @@ function AddCardPage() {
               name='pw1' 
               value={cardInfo.pw?.pw1 ?? ''} 
               onChange={handleChange} 
-              maxLength={1} // 카드 비밀번호 최대 길이
+              maxLength={1}
             />
             <Input 
               className='w-[43px]'
@@ -177,7 +177,7 @@ function AddCardPage() {
               name='pw2' 
               value={cardInfo.pw?.pw2 ?? ''} 
               onChange={handleChange} 
-              maxLength={1} // 카드 비밀번호 최대 길이
+              maxLength={1} 
             />
             <div className='flex w-[43px] h-[45px] justify-center items-center'>
               <GoDotFill />

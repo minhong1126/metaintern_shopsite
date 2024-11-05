@@ -57,7 +57,7 @@ function CartProduct({ index }: Index) {
   const address = require(`../../assets/product/img${index + 1}.png`);
 
   return (
-    <div className="flex items-center h-[185px]">
+    <div className="flex items-center h-[185px] border-b-[1px] border-[#EBEBEB]">
       <div className="flex ml-[22px]">
         <img
           src={address}
@@ -68,9 +68,11 @@ function CartProduct({ index }: Index) {
           <p className="text-[16px]"> {productList.brandList[index]} </p>
           <p className="text-[24px] font-bold"> {productList.priceList[index]} 원 </p>
           <div className="flex mt-[24px]">
-            <button onClick={minusNum}> - </button>
-            <p> {productIndex !== -1 ? cart.cnt[productIndex] : 0} </p>
-            <button onClick={plusNum}> + </button>
+            <button onClick={minusNum} 
+              className="flex justify-center items-center h-[24px] w-[24px] bg-[#83838333] rounded-[10px]"> - </button>
+            <p className="mx-[17px]"> {productIndex !== -1 ? cart.cnt[productIndex] : 0} </p>
+            <button onClick={plusNum}
+              className="flex justify-center items-center h-[24px] w-[24px] bg-[#83838333] rounded-[10px]"> + </button>
           </div>
         </div>
       </div>

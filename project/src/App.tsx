@@ -12,7 +12,7 @@ function App(){
     <RecoilRoot>
       <Routes>
         <Route path='/' element={<MainPage />} />
-        <Route path=':index/pay' element={<PaymentPage />} />
+        <Route path='/pay' element={<PaymentPage />} />
         <Route path='/addCard' element={<AddCardPage />} />
         <Route path='/cart' element={<CartPage />} />
       </Routes>
