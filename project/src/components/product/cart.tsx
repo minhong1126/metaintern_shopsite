@@ -1,16 +1,22 @@
 import { MdOutlineShoppingBag } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import cartState from "../../state/cartState";
 
-interface totalNum{
-  total: number;
-}
+function Cart(){
+  const cartTotal = useRecoilValue(cartState);
+  const nav = useNavigate();
 
-function Cart(props: totalNum){
+  function gotoCart(){
+    nav('/cart');
+  }
+  
   return(
     <button>
-      <MdOutlineShoppingBag  className="h-[24px] w-[20px]" />
-      { props.total === 0 ? null : (
+      <MdOutlineShoppingBag  className="h-[24px] w-[20px]" onClick={gotoCart}/>
+      { cartTotal.index.length === 0 ? null : (
         <span className="absolute bg-white text-black rounded-full h-[19px] w-[19px] top-[15px]">
-          {props.total}
+          {cartTotal.index.length}
         </span>
       )} 
     </button>
