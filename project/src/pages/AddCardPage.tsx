@@ -111,7 +111,7 @@ function AddCardPage() {
             name='cardNum' 
             value={cardInfo.cardNum ?? ''}
             onChange={handleChange} 
-            maxLength={12}
+            maxLength={16}
           />
         </div>
         <div>
