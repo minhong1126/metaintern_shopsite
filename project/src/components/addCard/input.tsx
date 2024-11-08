@@ -1,15 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const StyledInput = styled.input`
-  background-color: #ECEBF1;
-  height: 45px;
-  border-radius: 7px;
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 19px;
-  margin-top: 3px;
-`;
+import './input.css';
 
 interface InputProps {
   name: string;
@@ -17,8 +7,8 @@ interface InputProps {
   value: string | number | undefined;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
-  className?: string;
   maxLength: number;
+  className?: string; 
 }
 
 const Input: React.FC<InputProps> = ({
@@ -28,6 +18,7 @@ const Input: React.FC<InputProps> = ({
   onChange,
   placeholder,
   maxLength,
+  className, 
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
@@ -38,13 +29,14 @@ const Input: React.FC<InputProps> = ({
   };
 
   return (
-    <StyledInput
+    <input
       name={name}
       type={type}
       value={value}
-      onChange={handleChange} 
+      onChange={handleChange}
       placeholder={placeholder}
-      maxLength={maxLength} 
+      maxLength={maxLength}
+      className={`default-input-styles ${className}`} 
     />
   );
 };
