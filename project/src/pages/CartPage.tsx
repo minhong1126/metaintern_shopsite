@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
-import cartState from "../state/cartState";
+import { cartState, productState } from "../state/state";
 import CartProduct from "../components/cart/cartProduct";
-import productState from "../state/productState";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { useEffect, useState } from "react";
 

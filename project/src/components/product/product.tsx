@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
-import cartState from "../../state/cartState";
+import { cartState } from "../../state/state";
 
 // TypeScript 타입 설정
 interface ProductOption {
@@ -44,15 +44,19 @@ function Product(props: ProductOption) {
   }
 
   // 인덱스로 사진 가져오기
-  const address = require(`../../assets/product/img${props.index + 1}.png`);
+  const address = require(`../../assets/product/img${props.index}.png`);
 
   function gotoPayment() {
     nav(`/pay`);
   }
 
+  function gotoProduct(){
+    nav(`/product/${props.index}`);
+  }
+
   return (
     <div className="h-[247px] w-[184px] border border-[#F2F2F2] rounded-[15px]">
-      <img src={address} alt="상품 사진" className="h-[115px] w-[184px] object-cover" />
+      <img src={address} alt="상품 사진" className="h-[115px] w-[184px] object-cover" onClick={gotoProduct} />
       <div className="pl-[17px] pr-[12px] pt-[17px] pb-[20px] mb-[7px]">
         <p className="text-[16px] font-medium"> {props.brand} </p>
         <p className="text-[13px] text-[#7C7A7A]"> {props.explanation} </p>
