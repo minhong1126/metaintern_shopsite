@@ -1,7 +1,7 @@
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
-import cartState from "../../state/cartState";
+import { cartState } from "../../state/state";
 
 function Cart(){
   const cartTotal = useRecoilValue(cartState);

@@ -1,6 +1,5 @@
 import { useRecoilState, useRecoilValue } from "recoil";
-import productState from "../../state/productState";
-import cartState from "../../state/cartState";
+import { productState, cartState } from "../../state/state"
 
 interface Index {
   key: number;
@@ -12,6 +11,7 @@ function CartProduct({ index }: Index) {
   const [cart, setCart] = useRecoilState(cartState);
 
   const productIndex = cart.index.indexOf(index);
+  
 
   // 수량 감소
   function minusNum() {
@@ -21,7 +21,8 @@ function CartProduct({ index }: Index) {
       const updatedCounts = [...prev.cnt];
       if (updatedCounts[productIndex] > 1) {
         updatedCounts[productIndex] -= 1;
-      } else {
+      } 
+      else {
         const updatedIndexes = prev.index.filter((_, idx) => idx !== productIndex);
         const updatedCounts = prev.cnt.filter((_, idx) => idx !== productIndex);
 
@@ -54,7 +55,7 @@ function CartProduct({ index }: Index) {
   }
 
   // 상품 이미지 경로 설정
-  const address = require(`../../assets/product/img${index + 1}.png`);
+  const address = require(`../../assets/product/img${index}.png`);
 
   return (
     <div className="flex items-center h-[185px] border-b-[1px] border-[#EBEBEB]">

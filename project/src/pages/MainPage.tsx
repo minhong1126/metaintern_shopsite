@@ -2,8 +2,7 @@ import React from 'react';
 import Cart from '../components/product/cart';
 import Product from '../components/product/product';
 import { useRecoilValue } from 'recoil';
-import productState from '../state/productState';
-import cartState from '../state/cartState';
+import { cartState, productState } from "../state/state";
 
 // <태그 className='' -> TailwindCss
 // interface {}, 파라미터 -> Typescript

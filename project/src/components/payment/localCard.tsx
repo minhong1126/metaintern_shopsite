@@ -1,9 +1,15 @@
+import { useNavigate } from "react-router-dom";
+
 interface cardInfo {
   cardNum: string;
 }
 
 function LocalCard({ cardNum }: cardInfo) {
+  const nav = useNavigate();
   const cardImg = require(`../../assets/payment/card.png`);
+  function gotoPaySuccess(){
+    nav('/paySuccess');
+  }
   return (
     <>
       <div>
@@ -14,7 +20,9 @@ function LocalCard({ cardNum }: cardInfo) {
                 <img src={cardImg} alt="카드"/>
               </div>
               <div>
-                <button className="flex w-[213px] h-[30px] mt-[13px] items-center justify-center bg-[#FFEF64] text-[10px] rounded-full">
+                <button 
+                  className="flex w-[213px] h-[30px] mt-[13px] items-center justify-center bg-[#FFEF64] text-[10px] rounded-full"
+                  onClick={gotoPaySuccess}>
                   이 카드로 결제하기
                 </button>
               </div>

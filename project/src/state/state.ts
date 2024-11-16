@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 
-// 전체 상품 리스트
+// 전체 상품 리스트, 장바구니 리스트
 
 interface product{
   brandList: string[];
@@ -8,7 +8,12 @@ interface product{
   explainList: string[];
 }
 
-const productState = atom<product>({
+interface cart{
+  index: number[],
+  cnt: number[],
+}
+
+export const productState = atom<product>({
   key: 'product',
   default:{
     brandList: ["브랜드A", "브랜드A", "브랜드B", "브랜드B", "브랜드C", "브랜드C"],
@@ -17,4 +22,11 @@ const productState = atom<product>({
   }
 });
 
-export default productState;
+// 장바구니 상품 리스트
+export const cartState = atom<cart>({
+  key: 'cartState',
+  default: {
+    index: [],
+    cnt: [],
+  }
+});
