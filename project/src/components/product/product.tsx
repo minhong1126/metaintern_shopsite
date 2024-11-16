@@ -23,7 +23,6 @@ function Product(props: ProductOption) {
       setCart(prev => {
         const updatedIndexes = prev.index.filter(index => index !== props.index);
         const updatedCounts = prev.cnt.filter((_, idx) => idx !== prev.index.indexOf(props.index));
-        console.error(updatedCounts, updatedIndexes);
         return {
           index: updatedIndexes,
           cnt: updatedCounts
@@ -33,7 +32,6 @@ function Product(props: ProductOption) {
       setCart(prev => {
         const updatedIndexes = [...prev.index, props.index];
         const updatedCounts = [...prev.cnt, 1]; 
-        console.error(updatedCounts, updatedIndexes);
         return {
           index: updatedIndexes,
           cnt: updatedCounts
