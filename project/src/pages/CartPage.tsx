@@ -5,7 +5,6 @@ import CartProduct from "../components/cart/cartProduct";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { useEffect, useState } from "react";
 
-
 function CartPage() {
   const nav = useNavigate();
   const cart = useRecoilValue(cartState);

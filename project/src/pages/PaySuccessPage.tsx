@@ -1,12 +1,33 @@
 import { useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { cartState, productState } from "../state/state";
+import { useState, useEffect } from "react";
 
 function PaySuccessPage() {
   const nav = useNavigate();
   const cart = useRecoilValue(cartState);
-  // const product = useRecoilValue(productState);
-  // const total = 1;
+  const productList = useRecoilValue(productState);
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    function getTotal(){
+      let price = 0;
+      cart.index.forEach((i, idx) => {
+        const product = productList.priceList[i];
+        const quantity = cart.cnt[idx]; 
+
+        if (product && quantity) {
+          price += product * quantity;
+        }
+      });
+      if(price < 100000){
+        price += 3000;
+      }
+      setTotal(price);
+    }
+    getTotal();
+  }, []);
+
 
   function gotoCart(){
     nav('/cart');
@@ -23,7 +44,7 @@ function PaySuccessPage() {
         </div>
         <div>
           <p> 총 결제 금액 </p>
-          <p> 결제 금액 </p>
+          <p> {total} </p>
         </div>
         <div>
           <button 

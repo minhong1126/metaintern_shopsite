@@ -1,4 +1,4 @@
-import { atom, selector } from "recoil";
+import { atom } from "recoil";
 
 // 전체 상품 리스트, 장바구니 리스트
 
@@ -28,25 +28,5 @@ export const cartState = atom<cart>({
   default: {
     index: [],
     cnt: [],
-  }
-});
-
-export const totalSelector = selector({
-  key: 'totalSelector',
-  get: ({ get }) => {
-    const cart = get(cartState);
-    const productList = get(productState);
-    let total = 0;
-
-    cart.index.forEach((i, idx) => {
-      const product = productList.priceList[i];
-      const quantity = cart.cnt[idx];
-
-      if (product && quantity) {
-        total += product * quantity;
-      }
-    });
-    
-    return total;
   }
 });

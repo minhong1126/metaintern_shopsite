@@ -1,5 +1,5 @@
 import { useRecoilState, useRecoilValue } from "recoil";
-import { productState, cartState, totalSelector } from "../../state/state"
+import { productState, cartState } from "../../state/state"
 
 interface Index {
   key: number;
