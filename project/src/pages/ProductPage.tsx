@@ -100,8 +100,7 @@ function ProductPage() {
           <div className='ml-[38px]'>
             <p className='font-extrabold text-[20px]'> 관련 상품 </p>
             <p> 브랜드의 다른 신발은 어떠신가요? </p>
-            <div>
-              사진들
+            <div className='flex'>
             </div>
           </div>
         </div>
