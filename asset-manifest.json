@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/metaintern_shopsite/static/css/main.bf02e08e.css",
-    "main.js": "/metaintern_shopsite/static/js/main.5caf10d9.js",
+    "main.css": "/metaintern_shopsite/static/css/main.0097fb33.css",
+    "main.js": "/metaintern_shopsite/static/js/main.51e8ea45.js",
     "static/media/img0.png": "/metaintern_shopsite/static/media/img0.12aa5e8cce9c66c0583e.png",
     "static/media/img1.png": "/metaintern_shopsite/static/media/img1.e270387f2fe6bb2651a4.png",
     "static/media/img2.png": "/metaintern_shopsite/static/media/img2.f38b280984cc9b54a365.png",
@@ -9,11 +9,11 @@
     "static/media/img5.png": "/metaintern_shopsite/static/media/img5.447574b52e6e5460ab87.png",
     "static/media/img4.png": "/metaintern_shopsite/static/media/img4.6f6137b4cbdb4ee3e1e1.png",
     "index.html": "/metaintern_shopsite/index.html",
-    "main.bf02e08e.css.map": "/metaintern_shopsite/static/css/main.bf02e08e.css.map",
-    "main.5caf10d9.js.map": "/metaintern_shopsite/static/js/main.5caf10d9.js.map"
+    "main.0097fb33.css.map": "/metaintern_shopsite/static/css/main.0097fb33.css.map",
+    "main.51e8ea45.js.map": "/metaintern_shopsite/static/js/main.51e8ea45.js.map"
   },
   "entrypoints": [
-    "static/css/main.bf02e08e.css",
-    "static/js/main.5caf10d9.js"
+    "static/css/main.0097fb33.css",
+    "static/js/main.51e8ea45.js"
   ]
 }
