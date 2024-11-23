@@ -26,7 +26,7 @@ function PaySuccessPage() {
       setTotal(price);
     }
     getTotal();
-  }, []);
+  }, [cart.cnt, cart.index, productList.priceList]);
 
   function emptyCart(){
     setCart({
