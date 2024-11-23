@@ -73,9 +73,9 @@ function ProductPage() {
           </div>
           <div className='flex mt-[36px] ml-[38px]'>
             <div>
-              <p className='font-extrabold text-[30px]'> {productList.brandList[idx]} </p>
-              <p> {productList.explainList[idx]} </p>
-              <p className='font-medium text-[20px]'> {productList.priceList[idx]} 원 </p>
+              <h1 className='font-extrabold'> {productList.brandList[idx]} </h1>
+              <h5> {productList.explainList[idx]} </h5>
+              <h4 className='font-medium'> {productList.priceList[idx]} 원 </h4>
             </div>
             <div className="flex items-center mt-[22px] ml-[47px] h-[30px] w-[110px]">
               <button
@@ -83,7 +83,7 @@ function ProductPage() {
                 className="flex justify-center items-center h-[24px] w-[24px] bg-[#83838333] rounded-[10px]"> 
                 - 
               </button>
-              <p className="mx-[17px]"> {cart.index.includes(idx) ? cart.cnt[cart.index.indexOf(idx)] : 0} </p>
+              <h5 className="mx-[17px]"> {cart.index.includes(idx) ? cart.cnt[cart.index.indexOf(idx)] : 0} </h5>
               <button
                 onClick={plusNum}
                 className="flex justify-center items-center h-[24px] w-[24px] bg-[#83838333] rounded-[10px]"> 
@@ -98,8 +98,8 @@ function ProductPage() {
             </button>
           </div>
           <div className='ml-[38px]'>
-            <p className='font-extrabold text-[20px]'> 관련 상품 </p>
-            <p> 브랜드의 다른 신발은 어떠신가요? </p>
+            <h3 className='font-extrabold'> 관련 상품 </h3>
+            <h5> 브랜드의 다른 신발은 어떠신가요? </h5>
             <div className='flex'>
             </div>
           </div>

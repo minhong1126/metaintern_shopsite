@@ -23,8 +23,8 @@ function MainPage() {
         </header>
         <div className="flex flex-col p-[23px]">
           <div className="pt-[32px] pb-[23px]">
-            <p className="font-bold text-[30px]">신발 상품 목록</p>
-            <p className='text-[16px]'>현재 {productList.priceList.length}개의 상품이 있습니다</p>
+            <h1 className="font-bold"> 신발 상품 목록 </h1>
+            <h5> 현재 {productList.priceList.length}개의 상품이 있습니다 </h5>
           </div>
           <div className="grid grid-cols-2 gap-[16px]">
             {/* 반복문으로 6개 생성 후 인덱스로 값을 보냄 */}

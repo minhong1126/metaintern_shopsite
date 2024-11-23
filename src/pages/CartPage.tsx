@@ -52,8 +52,8 @@ function CartPage() {
         </button>
       </header>
       <div className="mt-[32px] ml-[22px]">
-        <p className="text-[30px] font-extrabold"> 장바구니 </p>
-        <p className="text-[16px]"> 현재 {cart.index.length}개의 상품이 담겨있습니다.</p>
+        <h1 className="font-extrabold"> 장바구니 </h1>
+        <h3> 현재 {cart.index.length}개의 상품이 담겨있습니다. </h3>
       </div>
       <div>
         {Array.from({ length: cart.index.length }, (_, i) => (
@@ -62,17 +62,17 @@ function CartPage() {
       </div>
       <div className="flex flex-col font-bold mt-[21px] ml-[21px] mr-[32px] border-b-[1px] border-[#EBEBEB]">
         <div className="flex justify-between h-[24px]">
-          <p className="text-[16px]"> 상품 금액 </p>
-          <p className="text-[24px]"> {total}원 </p>
+          <h5> 상품 금액 </h5>
+          <h2> {total}원 </h2>
         </div>
         <div className="flex justify-between h-[24px] mb-[21px]">
-          <p className="text-[16px]"> 배송비 </p>
-          <p className="text-[24px]"> {deliver}원 </p>
+          <h5> 배송비 </h5>
+          <h2> {deliver}원 </h2>
         </div>
       </div>
       <div className="flex font-bold justify-between mt-[21.5px] ml-[21px] mr-[32px]">
-        <p className="text-[16px]"> 총 급액 </p>
-        <p className="text-[24px]"> {deliver + total}원 </p>
+        <h5> 총 금액 </h5>
+        <h2> {deliver + total}원 </h2>
       </div>
       <button 
         className="flex w-[385px] h-[58px] mt-[43px] ml-[21px] items-center justify-center bg-[#393939] text-white rounded-full"

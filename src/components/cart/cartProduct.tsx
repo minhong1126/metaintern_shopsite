@@ -66,12 +66,12 @@ function CartProduct({ index }: Index) {
           className="h-[138.68px] w-[146.68px] rounded-[30px]"
         />
         <div className="flex flex-col h-[121.2px] w-[191.13px] ml-[54.54px]">
-          <p className="text-[16px]"> {productList.brandList[index]} </p>
-          <p className="text-[24px] font-bold"> {productList.priceList[index]} 원 </p>
+          <h5> {productList.brandList[index]} </h5>
+          <h2 className="font-bold"> {productList.priceList[index]} 원 </h2>
           <div className="flex mt-[24px]">
             <button onClick={minusNum} 
               className="flex justify-center items-center h-[24px] w-[24px] bg-[#83838333] rounded-[10px]"> - </button>
-            <p className="mx-[17px]"> {productIndex !== -1 ? cart.cnt[productIndex] : 0} </p>
+            <h5 className="mx-[17px]"> {productIndex !== -1 ? cart.cnt[productIndex] : 0} </h5>
             <button onClick={plusNum}
               className="flex justify-center items-center h-[24px] w-[24px] bg-[#83838333] rounded-[10px]"> + </button>
           </div>

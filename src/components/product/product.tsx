@@ -45,7 +45,16 @@ function Product(props: ProductOption) {
   const address = require(`../../assets/product/img${props.index}.png`);
 
   function gotoPayment() {
-    nav(`/pay`);
+    setCart(prev => {
+      const updatedIndexes = [...prev.index, props.index];
+      const updatedCounts = [...prev.cnt, 1]; 
+      return {
+        index: updatedIndexes,
+        cnt: updatedCounts
+      };
+    });
+
+    nav(`/cart`);
   }
 
   function gotoProduct(){
@@ -55,19 +64,21 @@ function Product(props: ProductOption) {
   return (
     <div className="h-[247px] w-[184px] border border-[#F2F2F2] rounded-[15px]">
       <img src={address} alt="상품 사진" className="h-[115px] w-[184px] object-cover" onClick={gotoProduct} />
-      <div className="pl-[17px] pr-[12px] pt-[17px] pb-[20px] mb-[7px]">
-        <p className="text-[16px] font-medium"> {props.brand} </p>
-        <p className="text-[13px] text-[#7C7A7A]"> {props.explanation} </p>
-        <p className="text-[14px] font-medium">{props.price}원</p>
-        <button
-          className={`h-[21px] w-[43px] rounded-[10px] text-[10px] ${clicked ? 'bg-[#D8D8D8] text-black' : 'bg-black text-white'}`}
-          onClick={productClicked}
-        >
-          {clicked ? '담김!' : '담기'}
-        </button>
-        <button className="h-[21px] w-[43px] rounded-[10px] text-[10px] bg-[#FFEF64] ml-[9px]" onClick={gotoPayment}>
-          구매
-        </button>
+      <div className="pl-[17px] pr-[12px] mt-[17px] pb-[20px] mb-[7px]">
+        <h5 className="font-medium"> {props.brand} </h5>
+        <p className="text-[12px] text-[#7C7A7A]"> {props.explanation} </p>
+        <h6 className="text-[14px] font-medium"> {props.price}원 </h6>
+        <div className="flex mt-[7px]">
+          <button
+            className={`h-[21px] w-[43px] rounded-[10px] text-[10px] ${clicked ? 'bg-[#D8D8D8] text-black' : 'bg-black text-white'}`}
+            onClick={productClicked}
+          >
+            {clicked ? '담김!' : '담기'}
+          </button>
+          <button className="h-[21px] w-[43px] rounded-[10px] text-[10px] bg-[#FFEF64] ml-[9px]" onClick={gotoPayment}>
+            구매
+          </button>
+        </div>
       </div>
     </div>
   );
