@@ -11,8 +11,6 @@ import PaySuccessPage from './pages/PaySuccessPage';
 function App() {
   return (
     <RecoilRoot>
-      {/* <BrowserRouter basename='https://minhong1126.github.io/metaintern_shopsite/' /> */}
-      {/* <HashRouter> */}
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/pay" element={<PaymentPage />} />
@@ -21,7 +19,6 @@ function App() {
           <Route path="/product/:index" element={<ProductPage />} />
           <Route path="/paySuccess" element={<PaySuccessPage />} />
         </Routes>
-      {/* </HashRouter> */}
     </RecoilRoot>
   );
 }
