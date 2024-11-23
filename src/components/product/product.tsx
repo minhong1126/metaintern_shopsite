@@ -45,7 +45,16 @@ function Product(props: ProductOption) {
   const address = require(`../../assets/product/img${props.index}.png`);
 
   function gotoPayment() {
-    nav(`/pay`);
+    setCart(prev => {
+      const updatedIndexes = [...prev.index, props.index];
+      const updatedCounts = [...prev.cnt, 1]; 
+      return {
+        index: updatedIndexes,
+        cnt: updatedCounts
+      };
+    });
+
+    nav(`/cart`);
   }
 
   function gotoProduct(){
