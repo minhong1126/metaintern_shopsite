@@ -93,7 +93,7 @@ function AddCardPage() {
           <button onClick={goBack} className='h-[28px] w-[28px]'>
             <IoIosArrowBack />
           </button>
-          <p className='flex items-center'> 카드 추가 </p>
+          <h4 className='flex items-center'> 카드 추가 </h4>
         </div>
         <button onClick={goBack} className='flex h-[36px] w-[36px] justify-center items-center'>
           <IoIosClose className='h-[20px] w-[20px]' />
@@ -104,7 +104,7 @@ function AddCardPage() {
       </div>
       <div className='ml-[28px] mt-[25px]'>
         <div>
-          <p> 카드 번호 </p>
+          <p className='text-[12px] text-[#525252]'> 카드 번호 </p>
           <Input 
             className='w-[318px]'
             type='number' 
@@ -115,7 +115,7 @@ function AddCardPage() {
           />
         </div>
         <div>
-          <p> 만료일 </p>
+          <p className='text-[12px] text-[#525252]'> 만료일 </p>
           <div className='flex'>
             <Input
               className='w-[63px]'
@@ -139,7 +139,7 @@ function AddCardPage() {
           </div>
         </div>
         <div>
-          <p> 카드 소유자 이름</p>
+          <p className='text-[12px] text-[#525252]'> 카드 소유자 이름</p>
           <Input
             className='w-[318px]'
             type='text' 
@@ -150,7 +150,7 @@ function AddCardPage() {
           />
         </div>
         <div>
-          <p> 보안 코드 </p>
+          <p className='text-[12px] text-[#525252]'> 보안 코드 </p>
           <Input 
             className='w-[84px]'
             type='password' 
@@ -161,7 +161,7 @@ function AddCardPage() {
           />
         </div>
         <div>
-          <p> 카드 비밀번호 </p>
+          <p className='text-[12px] text-[#525252]'> 카드 비밀번호 </p>
           <div className='flex items-center'>
             <Input 
               className='w-[43px]'
