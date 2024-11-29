@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { useNavigate, useParams } from 'react-router-dom';
 import { useRecoilState, useRecoilValue } from 'recoil';
@@ -9,9 +9,19 @@ function ProductPage() {
   const { index } = useParams<{ index: string }>();
   const idx = Number(index); 
   const productList = useRecoilValue(productState);  
-  const [cart, setCart] = useRecoilState(cartState);  
+  const [cart, setCart] = useRecoilState(cartState);
+  const [num, setNum] = useState(0);  
   const address = require(`../assets/product/img${idx}.png`);
   const productIndex = cart.index.indexOf(idx);
+
+  useEffect(() => {
+    if(cart.index.includes(idx)){
+      setNum(cart.cnt[productIndex]);
+    }
+    else{
+      setNum(0);
+    }
+  }, [cart.cnt, cart.index, idx, productIndex])
 
   // 뒤로 가기
   function goBack() {
@@ -83,7 +93,7 @@ function ProductPage() {
                 className="flex justify-center items-center h-[24px] w-[24px] bg-[#83838333] rounded-[10px]"> 
                 - 
               </button>
-              <h5 className="mx-[17px]"> {cart.index.includes(idx) ? cart.cnt[cart.index.indexOf(idx)] : 0} </h5>
+              <h5 className="mx-[17px]"> {num} </h5>
               <button
                 onClick={plusNum}
                 className="flex justify-center items-center h-[24px] w-[24px] bg-[#83838333] rounded-[10px]"> 
@@ -93,7 +103,8 @@ function ProductPage() {
           </div>
           <div>
             <button
-            className='flex w-[375px] h-[60px] m-[30px] items-center justify-center bg-black text-white rounded-full'>
+              className='flex w-[375px] h-[60px] m-[30px] items-center justify-center bg-black text-white rounded-full'
+              onClick={plusNum}>
               장바구니 담기
             </button>
           </div>

@@ -19,8 +19,7 @@ function Product(props: ProductOption) {
 
   function addProduct() {
     setCart(prev => {
-      const indexExists = prev.index.indexOf(props.index);
-      if (indexExists === -1) { 
+      if (!prev.index.includes(props.index)) { 
         const updatedIndexes = [...prev.index, props.index];
         const updatedCounts = [...prev.cnt, 1];
         return {
@@ -29,7 +28,7 @@ function Product(props: ProductOption) {
         };
       } else {
         const updatedCounts = [...prev.cnt];
-        updatedCounts[indexExists] += 1;
+        updatedCounts[prev.index.indexOf(props.index)] += 1;
         return {
           index: prev.index,
           cnt: updatedCounts
