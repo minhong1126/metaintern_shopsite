@@ -1,9 +1,21 @@
 ## 📌 기본 정보
 ### 프로젝트명: 
-인턴 IN 메타 3기 응용소프트웨어 개발 팀 프로젝트 페이지
+인턴 IN 메타 3기 응용소프트웨어 개발 프로젝트 페이지
+모바일 친화 신발 판매 사이트 구현
 
-### 사용하게 될 기술: 
-React, Typescript, TailwindCSS
+### 사용한 될 기술: 
+React, Typescript, TailwindCSS, Recoil, Cypress
+
+### Branch
+- main
+- docs: 문서
+- feature/product: 기본 페이지
+- feature/cart: 장바구니 페이지
+- feature/link: 페이지 간 연동 및 제품 상세 페이지
+- feature/payment: 결제 및 카드 추가 페이지
+- pages: 배포용 브랜치
+- gh-pages: Github actions 배포
+- test: 테스트 코드 추가
 
 ### 링크: https://minhong1126.github.io/metaintern_shopsite/
 
