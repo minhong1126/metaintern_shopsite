@@ -17,26 +17,42 @@ function Product(props: ProductOption) {
   const [cart, setCart] = useRecoilState(cartState);
   const nav = useNavigate();
 
-  // 장바구니 담긴 갯수 반환 - 이미 선택되어 있었을 때는 -1, 선택되어 있지 않았으면 +1
+  function addProduct() {
+    setCart(prev => {
+      if (!prev.index.includes(props.index)) { 
+        const updatedIndexes = [...prev.index, props.index];
+        const updatedCounts = [...prev.cnt, 1];
+        return {
+          index: updatedIndexes,
+          cnt: updatedCounts
+        };
+      } else {
+        const updatedCounts = [...prev.cnt];
+        updatedCounts[prev.index.indexOf(props.index)] += 1;
+        return {
+          index: prev.index,
+          cnt: updatedCounts
+        };
+      }
+    });
+  }
+  
+  function deleteProduct(){
+    setCart(prev => {
+      const updatedIndexes = prev.index.filter(index => index !== props.index);
+      const updatedCounts = prev.cnt.filter((_, idx) => idx !== prev.index.indexOf(props.index));
+      return {
+        index: updatedIndexes,
+        cnt: updatedCounts
+      };
+    });
+  }
+
   function productClicked() {
     if (clicked) {
-      setCart(prev => {
-        const updatedIndexes = prev.index.filter(index => index !== props.index);
-        const updatedCounts = prev.cnt.filter((_, idx) => idx !== prev.index.indexOf(props.index));
-        return {
-          index: updatedIndexes,
-          cnt: updatedCounts
-        };
-      });
+      deleteProduct();   
     } else {
-      setCart(prev => {
-        const updatedIndexes = [...prev.index, props.index];
-        const updatedCounts = [...prev.cnt, 1]; 
-        return {
-          index: updatedIndexes,
-          cnt: updatedCounts
-        };
-      });
+      addProduct();
     }
     setClicked(!clicked);
   }
@@ -45,15 +61,7 @@ function Product(props: ProductOption) {
   const address = require(`../../assets/product/img${props.index}.png`);
 
   function gotoPayment() {
-    setCart(prev => {
-      const updatedIndexes = [...prev.index, props.index];
-      const updatedCounts = [...prev.cnt, 1]; 
-      return {
-        index: updatedIndexes,
-        cnt: updatedCounts
-      };
-    });
-
+    addProduct();
     nav(`/cart`);
   }
 
