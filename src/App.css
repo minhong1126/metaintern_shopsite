@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* App.css
+전체적인 화면의 CSS 파일입니다. tailwindCSS로는 길이가 길어질 것 같아 따로 분리했습니다.
+폰트와 글자 크기가 설정되어 있습니다. */
+
 body{
   font-family: 'Montserrat';
 }

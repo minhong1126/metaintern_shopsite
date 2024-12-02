@@ -3,6 +3,11 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { cartState, productState } from "../state/state";
 import { useState, useEffect } from "react";
 
+// PaySuccessPage.tsx
+// 결제 성공 페이지입니다.
+// 결제 성공 시 총 금액을 표시해주고, 장바구니에 있던 목록들을 모두 초기화합니다.
+// 상품 목록으로 돌아가기를 누르면 MainPage로 되돌아갑니다.
+
 function PaySuccessPage() {
   const nav = useNavigate();
   const [cart, setCart] = useRecoilState(cartState);

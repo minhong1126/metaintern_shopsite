@@ -3,6 +3,11 @@ import { FaPlus } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
 import LocalCard from "../components/payment/localCard";
 
+// PaymentPage.tsx
+// 결제 페이지입니다.
+// localStorage에 등록된 카드가 있을 시 띄워주며 이 카드로 결제하는 버튼이 생성됩니다.
+// + 버튼 클릭 시 카드 등록 페이지로 넘어갑니다.
+
 function PaymentPage() {  
   const cardInfo = window.localStorage.getItem('cardInfo');
   console.log(cardInfo);

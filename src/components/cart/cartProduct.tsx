@@ -1,6 +1,11 @@
 import { useRecoilState, useRecoilValue } from "recoil";
 import { productState, cartState } from "../../state/state"
 
+// cartProduct.tsx
+// 장바구니 페이지의 상품 컴포넌트입니다.
+// 상품의 사진, 브랜드, 가격이 표시되어 있습니다.
+// + - 버튼으로 장바구니 내에서 개수 조정이 가능하고, 현재 몇 개가 담겼는지 확인 가능합니다.
+
 interface Index {
   key: number;
   index: number;
