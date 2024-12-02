@@ -35,7 +35,8 @@
 - 안정적인 배포를 위해 Github Pages를 사용했습니다.
 - 원할한 유지보수를 생각했습니다.
   - docs 브랜치에 기능 별 요구사항 분석서, 고객 요구사항, 리뷰 문서를 제작했습니다.
-  - 주기적인 리팩토링을 위해 버그 issue를 생성했습니다. 
+  - 주기적인 리팩토링을 위해 버그 issue를 생성했습니다.
+  - 파일 별로 상단에 기능을 설명하는 주석을 추가했습니다.
 
 ### 디자인:
 https://www.figma.com/design/DKeR5wR65RkxcAWReoBccl/%EC%9D%91%EC%9A%A9%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EB%94%94%EC%9E%90%EC%9D%B8-%EC%8B%9C%EC%95%88?node-id=0-1&node-type=canvas&t=gePNHR5wXMkmvlEh-0
