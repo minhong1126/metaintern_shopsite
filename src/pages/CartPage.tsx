@@ -5,6 +5,11 @@ import CartProduct from "../components/cart/cartProduct";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { useEffect, useState } from "react";
 
+// CartPage.tsx
+// 장바구니 페이지입니다.
+// 장바구니에 담긴 상품, 상품 개수, 총 가격의 합, 결제하기 버튼이 있습니다.
+// 상품의 가격의 합이 10만원 이상일 시 배송비가 0원이고, 그 이하는 3000으로 측정됩니다.
+
 function CartPage() {
   const nav = useNavigate();
   const cart = useRecoilValue(cartState);

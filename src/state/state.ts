@@ -1,6 +1,9 @@
 import { atom } from "recoil";
 
-// 전체 상품 리스트, 장바구니 리스트
+// state.ts
+// Recoil 라이브러리의 atom을 모아두었습니다.
+// productState: 총 상품 정보가 저장되어 있습니다. brandList(브랜드 목록), priceList(가격 목록), explainList(설명 목록)이 있습니다.
+// cartState: 장바구니 상태를 저장할 수 있습니다. 초기에는 비어있으며, 상품이 추가되면 productList에서 상품의 인덱스를 index에 담고 그 개수를 cnt에 담습니다.
 
 interface product{
   brandList: string[];

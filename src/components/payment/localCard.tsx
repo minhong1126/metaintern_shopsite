@@ -1,5 +1,9 @@
 import { useNavigate } from "react-router-dom";
 
+// localCard.tsx
+// 기존에 등록한 카드가 있을 때 보여지는 카드 컴포넌트입니다.
+// 이 카드로 결제하기 버튼 클릭 시 바로 PaymentSuccessPage로 넘어갑니다.
+
 interface cardInfo {
   cardNum: string;
 }

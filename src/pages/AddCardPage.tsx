@@ -4,6 +4,12 @@ import { GoDotFill } from "react-icons/go";
 import { IoIosArrowBack, IoIosClose } from "react-icons/io";
 import Input from '../components/addCard/input';
 
+// AddCardPage.tsx
+// 카드 추가 페이지입니다.
+// 카드의 정보를 입력할 수 있으며, 모든 값이 입력되었을 때 저장하기 버튼이 나타납니다.
+// 사용자 이름 제외 모두 number만 입력 가능하고, 사용자 이름은 string이 가능합니다.
+// 각각 자릿수 제한이 있습니다. 그 이상 입력이 불가하게 설정했습니다.
+
 class CardInfo {
   cardNum?: number;
   due?: {

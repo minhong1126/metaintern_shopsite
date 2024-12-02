@@ -3,7 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { cartState } from "../../state/state";
 
-// TypeScript 타입 설정
+// product.tsx
+// MainPage의 상품 컴포넌트 입니다.
+// 상품 사진, 브랜드, 가격, 설명이 표시됩니다.
+// 담기 버튼 클릭 시 장바구니에 담기고, 담김! 버튼 클릭 시 상품이 장바구니에서 빠집니다.
+// 구매 버튼 클릭 시 장바구니에 1개 추가한 후 PaymentPage로 넘어갑니다.
+
 interface ProductOption {
   index: number;
   brand: string;

@@ -1,3 +1,7 @@
+/* input.css
+카드 추가 페이지의 input 태그 css입니다.
+input들의 공통적인 css 특성을 묶어두었습니다. */
+
 input{
   background-color: #ECEBF1;
   height: 45px;

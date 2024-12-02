@@ -4,6 +4,12 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { productState, cartState } from '../state/state';
 
+// ProductPage.tsx
+// 상품 상세 페이지입니다.
+// 상품 사진, 브랜드, 가격, 설명이 표시됩니다.
+// 현재 장바구니에 담긴 개수를 알 수 있고, + - 버튼을 통해 조절할 수 있습니다.
+// 장바구니 담기 버튼 클릭 시 1개가 장바구니에 담기고, 개수가 1로 업데이트 됩니다.
+
 function ProductPage() {
   const nav = useNavigate();
   const { index } = useParams<{ index: string }>();
